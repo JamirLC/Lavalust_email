@@ -1,44 +1,32 @@
+
 <?php
-defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
+defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 
-class user_model extends Model
-{
-    public function read()
-    {
-        return $this->db->table('jlmc_users')->get_all();
-    }
+class User_model extends Model {
 
-    public function create($lastname, $firstname, $email, $gender, $address)
-    {
+    // create data
+    public function create($first_name, $last_name, $email, $password){      
         $data = array(
-            'jlmc_last_name' => $lastname,
-            'jlmc_first_name' => $firstname,
-            'jlmc_email' => $email,
-            'jlmc_gender' => $gender,
-            'jlmc_address' => $address
-        );
-        return $this->db->table('jlmc_users')->insert($data);
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'email' => $email,
+            'password' =>$password,
+            );
+
+       return  $this->db->table('user_table')->insert($data);
+     
     }
 
-    public function get1($id)
-    {
-        return $this->db->table('jlmc_users')->where('id', $id)->get();
-    }
+    public function verify($email){
+     return $this->db->table('user_table')->where('email', $email)->get_all();
 
-    public function update($lastname, $firstname, $email, $gender, $address, $id)
-    {
+    }
+    public function activate($email){
         $data = array(
-            'jlmc_last_name' => $lastname,
-            'jlmc_first_name' => $firstname,
-            'jlmc_email' => $email,
-            'jlmc_gender' => $gender,
-            'jlmc_address' => $address
-        );
-        return $this->db->table('jlmc_users')->where('id', $id)->update($data);
+            'status' => 'active',
+            );
+       return  $this->db->table('user_table')->where('email', $email)->update($data);
     }
-
-    public function delete($id)
-    {
-        return $this->db->table('jlmc_users')->where('id', $id)->delete();
-    }
-}
+   
+}   
+?>

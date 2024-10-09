@@ -1,5 +1,5 @@
 <?php
-defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
+defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 /**
  * ------------------------------------------------------------------
  * LavaLust - an opensource lightweight PHP MVC Framework
@@ -72,7 +72,7 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
 |
 |	$autoload['libraries'] = array('database', 'email', 'session');
 */
-$autoload['libraries'] = array('database', 'form_validation');
+$autoload['libraries'] = array('database','form_validation','session','email');
 
 /*
 | -------------------------------------------------------------------
@@ -82,7 +82,7 @@ $autoload['libraries'] = array('database', 'form_validation');
 |
 |	$autoload['helpers'] = array('url', 'file');
 */
-$autoload['helpers'] = array('url', 'common');
+$autoload['helpers'] = array('url','common');
 
 /*
 | -------------------------------------------------------------------
@@ -92,7 +92,7 @@ $autoload['helpers'] = array('url', 'common');
 |
 |	$autoload['models'] = array('model1_model', 'model2_model')
 */
-$autoload['models'] = array('user_model');
+$autoload['models'] = array('User_model');
 
 /*
 | -------------------------------------------------------------------
@@ -107,3 +107,4 @@ $autoload['models'] = array('user_model');
 |
 */
 $autoload['configs'] = array();
+?>

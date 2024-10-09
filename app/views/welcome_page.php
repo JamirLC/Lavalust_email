@@ -1,9 +1,8 @@
 <?php
-defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
+defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>Welcome to LavaLust</title>
@@ -13,7 +12,7 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
             margin: 20px;
         }
 
-        body {
+        body{
             font-size: 15px;
             font-family: Tahoma, sans-serif;
             color: #888;
@@ -42,7 +41,7 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
             background-color: #2980B9;
             color: #ffffff;
             padding: 15px;
-
+            
         }
 
         .main {
@@ -61,7 +60,6 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
         }
     </style>
 </head>
-
 <body>
     <div class="header">LavaLust Framework</div>
     <div class="main">
@@ -84,9 +82,8 @@ defined('PREVENT_DIRECT_ACCESS') or exit('No direct script access allowed');
 
         <p>You can star and fork the <a href="https://github.com/ronmarasigan/LavaLust">Github Repository</a> and read its <a href="https://lavalust4.netlify.app/">Documentation</a>.</p>
     </div>
-    <div class="footer">Page rendered with <?php echo $this->performance->memory_usage(); ?> in <strong><?php echo $this->performance->elapsed_time('lavalust'); ?></strong> seconds. <?php echo (config_item('ENVIRONMENT') === 'development') ?  'LavaLust Version <strong>' . config_item('VERSION') . '</strong>' : '' ?>
+    <div class="footer">Page rendered with <?php echo $this->performance->memory_usage(); ?> in <strong><?php echo $this->performance->elapsed_time('lavalust'); ?></strong> seconds. <?php echo  (config_item('ENVIRONMENT') === 'development') ?  'LavaLust Version <strong>' . config_item('VERSION') . '</strong>' : '' ?>
     </div>
 
 </body>
-
 </html>
